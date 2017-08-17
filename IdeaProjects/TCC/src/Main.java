@@ -5,12 +5,17 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 import java.util.ArrayList;
+import br.com.ConexaoBanco.ConexaoMySql;
 
 public class Main{
 
     public static void main(String argv[]) {
 
+        System.out.println(ConexaoMySql.statusConection());
+        ConexaoMySql.getConexao();
+
         try {
+            System.out.println("------------Leitura do XML começou ----------------");
 
             File fXmlFile = new File("/home/loraine/IdeaProjects/TCC/XML/ID1/AlanMitchellDurham.xml");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
